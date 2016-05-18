@@ -1,0 +1,66 @@
+<html>
+<head> 
+  <link rel="shortcut icon" href="">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='scripts/Login/login.js') }}"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>        
+        <script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<style>
+  .arrow {
+       color:red;
+       font-size: small;
+  }
+</style>
+</head>
+<body>
+      <div id="registerformdiv" style="align:center;display: none;"> 
+       <form  id="registerform" action="" method="post">    
+        <h1>Register</h1>        
+        <fieldset>          
+          <label for="name">Name:</label>
+          <input type="text" id="user_name" name="user_name" required>        
+          
+          <label for="user_email">Email:</label>
+          <input type="email" id="user_email" name="user_email" required>
+
+          <label for="phone_number">Phone Number:</label>
+          <input type="text" id="user_phone_number" name="user_phone_number">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="cfmPassword">Password Confirm:</label>
+          <input type="password" id="cfmPassword" name="cfmPassword" required>
+
+          <label for="country">Country:</label>
+            <select id="country" name="country">                                    
+            </select>        
+        </fieldset>                     
+        <button id="createUser" type="required">Sign Up</button>        
+        </form>
+      </div>
+      <div id="loginformdiv" style="align:center;"> 
+       <form id="loginForm" action="/SingUp" method="post">    
+        <h1>Login</h1>        
+        <fieldset>                    
+          <label for="mail">Email:</label>
+          <input type="email" id="lmail" name="user_email" required>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="lpassword" name="user_password" required>
+        </fieldset>                     
+        <button id="loginbtn" type="required">Sign Up</button>
+        <a href="#" id="toregisterbtn">Register</a>             
+        </form>         
+      </div>
+</body>
+</html>
